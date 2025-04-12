@@ -188,7 +188,7 @@ def monitor_unauthorized_person(frame, API_key, recording_dir="recordings", capt
             cv2.imshow("Security Monitoring", frame)
             
             # Exit on 'q' key
-            if cv2.waitKey(1) & 0xFF == ord('q'):
+            if cv2.waitKey(10) & 0xFF == ord('q'):
                 break
                 
     finally:
