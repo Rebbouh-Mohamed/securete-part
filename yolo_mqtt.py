@@ -28,7 +28,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     
     print(f"📡 {msg.topic}: {msg.payload.decode()}")
-    if msg.payload.decode()=='1':
+    if msg.payload.decode()=='Motion Detected!':
         print("camera")
         # Configuration
         # Update with your YOLO model path
@@ -40,7 +40,7 @@ def on_message(client, userdata, msg):
         # Step 2: If unauthorized person detected, start monitoring
         if result == "unauthorized":
             # Get a fresh frame to start with
-            cap = cv2.VideoCapture(0)
+            cap = cv2.VideoCapture(0,cv2.CAP_V4L2)
             ret, frame = cap.read()
             cap.release()
             
