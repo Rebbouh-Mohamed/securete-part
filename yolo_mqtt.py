@@ -1,4 +1,4 @@
-from new import detect_faces,monitor_unauthorized_person
+from helper import detect_faces,monitor_unauthorized_person
 import paho.mqtt.client as mqtt
 import cv2
 from datetime import datetime
